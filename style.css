@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: left;
   max-width: 50%;
+  overflow-x: scroll;
 }
 .main-image-container img {
   width: 100%;
@@ -30,6 +31,9 @@
   .thumbnail-container {
     top: 95%;
   }
+  #minimise-thumbnail-bar {
+    top: 94%;
+  }
 }
 #move-left,
 #move-right,
@@ -37,12 +41,14 @@
   position: fixed;
 }
 #move-left {
-  left: 20px;
+  left: 2%;
   top: 40vh;
 }
 #move-right {
-  left: 20px;
+  right: 2%;
   top: 40vh;
 }
 #minimise-thumbnail-bar {
+  top: 5%;
+  left: calc(98% / 2);
 }
