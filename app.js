@@ -1,4 +1,5 @@
 //Store image data
+let newFullscreenImage;
 let images = {
   sourceURL: [
     "./images/MobieandSmutt.webp",
@@ -34,16 +35,24 @@ function createThumbnails() {
     if (i === 0) {
       newImg.className = "thumbnail-image first-image";
     }
+    newImg.id = `${i}`;
     thumbnailContainer = document.querySelector(".thumbnail-container");
     thumbnailContainer.appendChild(newImg);
     newImg.addEventListener("click", function (event) {
       createFullScreenImages(event.srcElement);
-      console.log(event);
     });
   }
 }
 createThumbnails();
-
+document.addEventListener("keyup", function (event) {
+  console.log(event.key);
+  if (event.key === "ArrowLeft") {
+    moveLeft();
+  }
+  if (event.key === "ArrowRight") {
+    moveRight();
+  }
+});
 //create main/background image
 const firstImage = document.querySelector(".first-image");
 createFullScreenImages(firstImage);
@@ -54,8 +63,27 @@ function createFullScreenImages(image) {
   newFullscreenImage = document.createElement("img");
   newFullscreenImage.src = image.src;
   newFullscreenImage.alt = `fullscreen image of ${image.alt}`;
+  newFullscreenImage.className = "fullscreen-img";
+  newFullscreenImage.id = image.id;
+  if (image.id === undefined) {
+    newFullscreenImage.id = "0";
+  }
   mainImage.appendChild(newFullscreenImage);
 }
-function moveLeft() {}
-function moveRight() {}
+
+function moveLeft() {
+  if (newFullscreenImage.id != "0") {
+    prevId = Number(newFullscreenImage.id) - 1;
+    prevImg = document.getElementById(`${prevId}`);
+    createFullScreenImages(prevImg);
+  }
+}
+function moveRight() {
+  if (newFullscreenImage.id != String(images.sourceURL.length - 1)) {
+    nxtId = Number(newFullscreenImage.id) + 1;
+    console.log(nxtId);
+    nxtImg = document.getElementById(`${nxtId}`);
+    createFullScreenImages(nxtImg);
+  }
+}
 function toggleMinimiseThumbnail() {}
