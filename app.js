@@ -86,7 +86,7 @@ function moveRight() {
 }
 function toggleMinimiseThumbnail() {
   toToggle = document.querySelector(".thumbnail-container");
-
+  //   buttonToMove = document.querySelector("#minimise-thumbnail-bar");
   if (toToggle.innerHTML === "") {
     toToggle.innerHTML = toToggleContents;
   } else if (toToggle.innerHTML != null) {
