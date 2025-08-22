@@ -14,20 +14,29 @@ let images = {
 
 //create thumbnail images
 function createThumbnails() {
-  for (i = 0; i < images.length; i++) {
+  for (i = 0; i < images.sourceURL.length; i++) {
     const newImg = document.createElement("img");
     newImg.src = images.sourceURL[i];
     newImg.alt = images.altText[i];
-    newImg.className = ".thumbnail-image";
+    newImg.className = "thumbnail-image";
     thumbnailContainer = document.querySelector(".thumbnail-container");
     thumbnailContainer.appendChild(newImg);
+    newImg.addEventListener("click", function (event) {
+      createFullScreenImages(event.srcElement);
+      console.log(event);
+    });
   }
 }
 createThumbnails();
+
 //create main/background image
 
-function createFullScreenImages() {
+function createFullScreenImages(image) {
   //remove old image
   mainImage = document.querySelector(".main-image-container");
   mainImage.innerHTML = null;
+  newFullscreenImage = document.createElement("img");
+  newFullscreenImage.src = image.src;
+  newFullscreenImage.alt = `fullscreen image of ${image.alt}`;
+  mainImage.appendChild(newFullscreenImage);
 }
