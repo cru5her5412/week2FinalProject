@@ -84,4 +84,13 @@ function moveRight() {
     createFullScreenImages(nxtImg);
   }
 }
-function toggleMinimiseThumbnail() {}
+function toggleMinimiseThumbnail() {
+  toToggle = document.querySelector(".thumbnail-container");
+
+  if (toToggle.innerHTML === "") {
+    toToggle.innerHTML = toToggleContents;
+  } else if (toToggle.innerHTML != null) {
+    toToggleContents = toToggle.innerHTML;
+    toToggle.innerHTML = null;
+  }
+}
