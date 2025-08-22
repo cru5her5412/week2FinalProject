@@ -89,8 +89,10 @@ function toggleMinimiseThumbnail() {
   //   buttonToMove = document.querySelector("#minimise-thumbnail-bar");
   if (toToggle.innerHTML === "") {
     toToggle.innerHTML = toToggleContents;
+    toToggle.style.border = "4px solid white";
   } else if (toToggle.innerHTML != null) {
     toToggleContents = toToggle.innerHTML;
     toToggle.innerHTML = null;
+    toToggle.style.border = "none";
   }
 }
