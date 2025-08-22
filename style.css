@@ -14,12 +14,13 @@
 }
 .thumbnail-container {
   position: fixed;
-  top: 50px;
+  top: 2%;
   margin-inline: 25% 25%;
   background-color: grey;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  max-width: 50%;
 }
 .main-image-container img {
   width: 100%;
@@ -27,6 +28,21 @@
 }
 @media (max-width: 500px) {
   .thumbnail-container {
-    bottom: 50px;
+    top: 95%;
   }
+}
+#move-left,
+#move-right,
+#minimise-thumbnail-bar {
+  position: fixed;
+}
+#move-left {
+  left: 20px;
+  top: 40vh;
+}
+#move-right {
+  left: 20px;
+  top: 40vh;
+}
+#minimise-thumbnail-bar {
 }
