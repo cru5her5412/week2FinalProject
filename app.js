@@ -45,7 +45,6 @@ function createThumbnails() {
 }
 createThumbnails();
 document.addEventListener("keyup", function (event) {
-  console.log(event.key);
   if (event.key === "ArrowLeft") {
     moveLeft();
   }
@@ -81,7 +80,6 @@ function moveLeft() {
 function moveRight() {
   if (newFullscreenImage.id != String(images.sourceURL.length - 1)) {
     nxtId = Number(newFullscreenImage.id) + 1;
-    console.log(nxtId);
     nxtImg = document.getElementById(`${nxtId}`);
     createFullScreenImages(nxtImg);
   }
