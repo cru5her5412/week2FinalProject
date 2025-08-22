@@ -56,3 +56,6 @@ function createFullScreenImages(image) {
   newFullscreenImage.alt = `fullscreen image of ${image.alt}`;
   mainImage.appendChild(newFullscreenImage);
 }
+function moveLeft() {}
+function moveRight() {}
+function toggleMinimiseThumbnail() {}

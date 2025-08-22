@@ -10,16 +10,19 @@
   <body>
     <header>
       <nav>
-        <button aria-label="Left" id="move-left"></button>
-        <button aria-label="Right" id="move-right"></button>
-        <button
-          aria-label="Minimise/maximise"
-          id="minimise-thumbnail-bar"
-        ></button>
+        <button aria-label="Left" id="move-left">
+          <img src="./images/leftArrow.png" />
+        </button>
+        <button aria-label="Right" id="move-right" onclick="moveRight()">
+          <img src="./images/rightArrow.png" />
+        </button>
       </nav>
     </header>
     <main>
       <div class="thumbnail-container"></div>
+      <button aria-label="Minimise/maximise" id="minimise-thumbnail-bar">
+        <img src="./images/minimise.png" />
+      </button>
       <div class="main-image-container"></div>
     </main>
     <footer></footer>
