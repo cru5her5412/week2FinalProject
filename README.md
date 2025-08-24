@@ -15,5 +15,5 @@
 - nothing was particularly difficult, just required googling to understand what to use to target as an event for key presses
 - are there any ways i could improve on my functions? also is my way of handling image storage less efficient?
 - mostly just MDN
-- one error i encountered was the left movement not working, it took me far too long to realise it was because i had pasted the code for the click on the button and not changed the called function
+- one error i encountered was the left movement not working, it took me far too long to realise it was because i had pasted the code for the click on the button and not changed the called function. another i encountered very recently was that when i hide the thumbnail bar, and try to change image it removed the image and broke. i solved it by referring back to the original image storage instead of the element in the thumbnail bar
 - creation of the website went very well, but i could've picked better images due to most being mobile sized and stretching awkwardly on desktop
