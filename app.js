@@ -73,14 +73,20 @@ function createFullScreenImages(image) {
 function moveLeft() {
   if (newFullscreenImage.id != "0") {
     prevId = Number(newFullscreenImage.id) - 1;
-    prevImg = document.getElementById(`${prevId}`);
+    prevImg = document.createElement("img");
+    prevImg.src = images.sourceURL[prevId];
+    prevImg.alt = images.altText[prevId];
+    prevImg.id = String(prevId);
     createFullScreenImages(prevImg);
   }
 }
 function moveRight() {
   if (newFullscreenImage.id != String(images.sourceURL.length - 1)) {
     nxtId = Number(newFullscreenImage.id) + 1;
-    nxtImg = document.getElementById(`${nxtId}`);
+    nxtImg = document.createElement("img");
+    nxtImg.src = images.sourceURL[nxtId];
+    nxtImg.alt = images.altText[nxtId];
+    nxtImg.id = String(nxtId);
     createFullScreenImages(nxtImg);
   }
 }
